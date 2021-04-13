@@ -1,15 +1,17 @@
 package springbasic.customaop;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import springbasic.customaop.member.MemberService;
 
 @Controller
 public class TestController {
 
     private MemberService service;
 
-    public TestController(MemberService service) {
+    public TestController(@Qualifier("templateMethodVer") MemberService service) {
         this.service = service;
     }
 
