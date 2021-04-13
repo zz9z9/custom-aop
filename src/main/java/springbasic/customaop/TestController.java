@@ -11,7 +11,7 @@ public class TestController {
 
     private MemberService service;
 
-    public TestController(@Qualifier("templateMethodVer") MemberService service) {
+    public TestController(@Qualifier("dependencyInjectionVer") MemberService service) {
         this.service = service;
     }
 

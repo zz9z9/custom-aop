@@ -1,6 +1,7 @@
-package springbasic.customaop.member.serviceimpl.templatemethod;
+package springbasic.customaop.member.serviceimpl.ver2;
 
 import springbasic.customaop.logger.MyLogger;
+import springbasic.customaop.member.Member;
 import springbasic.customaop.member.MemberService;
 
 public abstract class SuperServiceImpl implements MemberService {
@@ -8,7 +9,7 @@ public abstract class SuperServiceImpl implements MemberService {
     private MyLogger logger = new MyLogger();
 
     public abstract void doSave();
-    public abstract void doFind();
+    public abstract Member doFind();
 
     public void save() {
         logger.start();
@@ -16,10 +17,12 @@ public abstract class SuperServiceImpl implements MemberService {
         logger.end();
     }
 
-    public void find() {
+    public Member find() {
         logger.start();
-        doFind();
+        Member findMember = doFind();
         logger.end();
+
+        return findMember;
     }
 }
 

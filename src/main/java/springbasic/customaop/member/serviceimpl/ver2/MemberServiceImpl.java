@@ -1,4 +1,4 @@
-package springbasic.customaop.member.serviceimpl.templatemethod;
+package springbasic.customaop.member.serviceimpl.ver2;
 
 import org.springframework.stereotype.Service;
 import springbasic.customaop.member.Member;
@@ -14,12 +14,13 @@ public class MemberServiceImpl extends SuperServiceImpl {
 
     @Override
     public void doSave() {
-        repository.save(new Member(1L, "템플릿메소드버전"));
+        repository.save(new Member(1L, "ver2 - 템플릿 메소드 버전"));
     }
 
     @Override
-    public void doFind() {
-        repository.findById(1L);
+    public Member doFind() {
+        Member findMember = repository.findById(1L).orElse(null);
+        return findMember;
     }
 }
 

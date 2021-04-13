@@ -1,6 +1,5 @@
-package springbasic.customaop.member.serviceimpl.init;
+package springbasic.customaop.member.serviceimpl.ver1;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import springbasic.customaop.member.Member;
 import springbasic.customaop.member.MemberRepository;
@@ -27,11 +26,13 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void find() {
+    public Member find() {
         logger.start();
 
-        repository.findById(1L);
+        Member member = repository.findById(1L).orElse(null);
 
         logger.end();
+
+        return member;
     }
 }
