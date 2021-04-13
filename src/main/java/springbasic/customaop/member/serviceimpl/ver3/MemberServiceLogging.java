@@ -6,7 +6,7 @@ import springbasic.customaop.logger.MyLogger;
 import springbasic.customaop.member.Member;
 import springbasic.customaop.member.MemberService;
 
-@Service("dependencyInjectionVer")
+@Service("proxyVer")
 public class MemberServiceLogging implements MemberService {
 
     private MyLogger logger = new MyLogger();
@@ -19,20 +19,17 @@ public class MemberServiceLogging implements MemberService {
     @Override
     public void save() {
         logger.start();
-
         service.save();
-
         logger.end();
     }
 
     @Override
     public Member find() {
         logger.start();
-
         Member findMember = service.find();
-
         logger.end();
 
         return findMember;
     }
 }
+

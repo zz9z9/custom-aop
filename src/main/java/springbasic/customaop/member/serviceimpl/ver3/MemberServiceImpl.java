@@ -15,7 +15,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void save() {
-        repository.save(new Member(1L, "ver3 - 의존성 주입 버전"));
+        repository.save(new Member(1L, "ver3 - 프록시 버전"));
     }
 
     @Override
@@ -24,5 +24,7 @@ public class MemberServiceImpl implements MemberService {
         return findMember;
     }
 }
+
+
 
 
