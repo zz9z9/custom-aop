@@ -7,12 +7,12 @@ import springbasic.customaop.member.Member;
 import springbasic.customaop.member.MemberService;
 
 @Service("proxyVer")
-public class MemberServiceLogging implements MemberService {
+public class MemberServiceProxy implements MemberService {
 
     private MyLogger logger = new MyLogger();
     private final MemberService service;
 
-    public MemberServiceLogging(@Qualifier("memberServiceImpl") MemberService service) {
+    public MemberServiceProxy(@Qualifier("memberServiceImpl") MemberService service) {
         this.service = service;
     }
 
