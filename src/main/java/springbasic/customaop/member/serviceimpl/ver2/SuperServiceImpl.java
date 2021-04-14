@@ -9,7 +9,7 @@ public abstract class SuperServiceImpl implements MemberService {
     private MyLogger logger = new MyLogger();
 
     public abstract void doSave();
-    public abstract Member doFind();
+    public abstract Member doFind(long id);
 
     public void save() {
         logger.start();
@@ -17,9 +17,9 @@ public abstract class SuperServiceImpl implements MemberService {
         logger.end();
     }
 
-    public Member find() {
+    public Member find(long id) {
         logger.start();
-        Member findMember = doFind();
+        Member findMember = doFind(id);
         logger.end();
 
         return findMember;

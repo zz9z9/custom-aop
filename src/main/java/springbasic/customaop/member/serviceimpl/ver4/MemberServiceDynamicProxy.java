@@ -24,9 +24,7 @@ public class MemberServiceDynamicProxy implements InvocationHandler {
         Object obj = method.invoke(target, args);
         logger.end();
 
-        System.out.println("invoke result obj : "+obj);
-
-        return null;
+        return obj;
     }
 }
 

@@ -24,9 +24,9 @@ public class MemberServiceProxy implements MemberService {
     }
 
     @Override
-    public Member find() {
+    public Member find(long id) {
         logger.start();
-        Member findMember = service.find();
+        Member findMember = service.find(id);
         logger.end();
 
         return findMember;
