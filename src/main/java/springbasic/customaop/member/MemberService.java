@@ -2,5 +2,5 @@ package springbasic.customaop.member;
 
 public interface MemberService {
     void save();
-    Member find();
+    Member find(long id);
 }

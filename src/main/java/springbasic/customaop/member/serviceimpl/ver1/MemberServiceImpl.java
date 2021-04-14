@@ -26,10 +26,10 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member find() {
+    public Member find(long id) {
         logger.start();
 
-        Member member = repository.findById(1L).orElse(null);
+        Member member = repository.findById(id).orElse(null);
 
         logger.end();
 

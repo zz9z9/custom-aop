@@ -18,8 +18,8 @@ public class MemberServiceImpl extends SuperServiceImpl {
     }
 
     @Override
-    public Member doFind() {
-        Member findMember = repository.findById(1L).orElse(null);
+    public Member doFind(long id) {
+        Member findMember = repository.findById(id).orElse(null);
         return findMember;
     }
 }

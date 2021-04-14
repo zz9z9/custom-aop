@@ -19,8 +19,8 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member find() {
-        Member findMember = repository.findById(1L).orElse(null);
+    public Member find(long id) {
+        Member findMember = repository.findById(id).orElse(null);
         return findMember;
     }
 }
